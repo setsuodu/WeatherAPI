@@ -1,0 +1,34 @@
+site_name: 网站title
+site_url: https://setsuodu.github.io/WeatherAPI/
+nav: # 定义网站左侧导航栏的结构
+    - Home: index.md
+    - 概念: concepts/intro.md
+
+theme:
+    name: material # 使用 MkDocs-Material 主题
+    # ... 其他主题配置，如颜色、字体等
+
+plugins:
+    # 启用搜索功能
+    - search:
+        lang: en, zh 
+    # 如果要处理 Obsidian 链接和特性，需要在这里添加相应插件
+    # - mkdocs-for-obsidian
+    # - awesome-pages
+markdown_extensions:
+    # MkDocs Material 推荐的基础扩展
+    - attr_list
+    - def_list
+    - footnotes
+    - admonition
+    - pymdownx.arithmatex:
+        generic: true
+
+    # 高级增强（提供类似 Obsidian 的高级渲染）
+    - pymdownx.details
+    - pymdownx.superfences
+    - pymdownx.critic # 评论/批注
+    - pymdownx.betterem
+    - pymdownx.tasklist: # 支持 - [ ] 任务列表
+        custom_checkbox: true
+    - pymdownx.highlight

@@ -1,0 +1,54 @@
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # 监听主分支的推送
+
+# 确保添加了权限块！这是您之前解决 403 问题的关键。
+permissions:
+  contents: read
+  pages: write # 允许写入 Pages 部署
+  id-token: write # 用于 OIDC 认证
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    # 这一步是关键！告诉 Pages 服务部署结果在哪里
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          # 确保安装了所有需要的库
+          pip install mkdocs mkdocs-material mkdocs-roamlinks-plugin 
+      
+      - name: Build MkDocs site
+        # 只需要构建，不需要执行 git push
+        run: mkdocs build --clean
+      
+      - name: Setup Pages
+        # 官方 Pages 设置 Action
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        # 上传 MkDocs 构建好的 'site' 目录作为 Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './site' # 你的 MkDocs 产物目录
+
+      - name: Deploy to GitHub Pages
+        # 官方 Pages 部署 Action
+        id: deployment
+        uses: actions/deploy-pages@v4

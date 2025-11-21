@@ -6,28 +6,8 @@ nav: # 定义网站左侧导航栏的结构
     - API 文档: api/swagger.json        # 自动生成的路径
 
 theme:
-    name: material
-    language: zh
-    palette:
-      - scheme: default
-        primary: indigo
-        accent: indigo
-        toggle:
-          icon: material/brightness-7
-          name: 切换到暗色模式
-      - scheme: slate
-        primary: indigo
-        accent: indigo
-        toggle:
-          icon: material/brightness-4
-          name: 切换到亮色模式
-    features:
-      - navigation.tabs
-      - navigation.sections
-      - navigation.top
-      - search.suggest
-      - search.highlight
-      - content.code.copy
+    name: material # 使用 MkDocs-Material 主题
+    # ... 其他主题配置，如颜色、字体等
 
 plugins:
     # 启用搜索功能

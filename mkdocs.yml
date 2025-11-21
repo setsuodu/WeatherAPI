@@ -3,7 +3,7 @@ site_url: https://setsuodu.github.io/WeatherAPI/
 nav: # 定义网站左侧导航栏的结构
     - Home: index.md
     - 概念: concepts/intro.md
-    - API 文档: api/swagger.json        # 自动生成的路径
+    - API 文档: api-docs.md        # 自动生成的路径
 
 theme:
     name: material # 使用 MkDocs-Material 主题

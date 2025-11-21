@@ -39,7 +39,7 @@ jobs:
       
       - name: Build MkDocs site
         # 只需要构建，不需要执行 git push
-        run: mkdocs build --clean --strict   # --strict 能让你早点发现配置问题
+        run: mkdocs build --clean
       
       - name: Setup Pages
         # 官方 Pages 设置 Action

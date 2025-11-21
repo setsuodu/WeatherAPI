@@ -1,10 +1,13 @@
 # Introduce
 
-1. Obsidian + MkDocs + GitHub Pages & Actions;✅
+✅ Obsidian + MkDocs + GitHub Pages & Actions;
 	- http://setsuodu.github.io/WeatherAPI/
 
-2. Swagger + MkDocs;❌
+❌ Swagger + MkDocs;
 	- MkDocs 渲染 API文档，嵌入到 md，太丑！
+
+Swagger示例: https://petstore.swagger.io/
+ReDoc示例: https://redocly.github.io/redoc/
 
 ✅ 推荐结合使用 ReDoc + MkDocs
 - 使用 ReDoc (或 Swagger UI) 专门生成您的 API 参考文档（独立部署，或作为一个子目录/链接）。

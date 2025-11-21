@@ -3,10 +3,31 @@ site_url: https://setsuodu.github.io/WeatherAPI/
 nav: # 定义网站左侧导航栏的结构
     - Home: index.md
     - 概念: concepts/intro.md
+    - API 文档: openapi/        # 自动生成的路径
 
 theme:
-    name: material # 使用 MkDocs-Material 主题
-    # ... 其他主题配置，如颜色、字体等
+    name: material
+    language: zh
+    palette:
+      - scheme: default
+        primary: indigo
+        accent: indigo
+        toggle:
+          icon: material/brightness-7
+          name: 切换到暗色模式
+      - scheme: slate
+        primary: indigo
+        accent: indigo
+        toggle:
+          icon: material/brightness-4
+          name: 切换到亮色模式
+    features:
+      - navigation.tabs
+      - navigation.sections
+      - navigation.top
+      - search.suggest
+      - search.highlight
+      - content.code.copy
 
 plugins:
     # 启用搜索功能
@@ -15,6 +36,13 @@ plugins:
     # 如果要处理 Obsidian 链接和特性，需要在这里添加相应插件
     # - mkdocs-for-obsidian
     # - awesome-pages
+    - openapi-plugin:             # ← 重点！这个插件专门渲染 swagger.json
+      input: api/swagger.json
+      title: WeatherService API v1
+      openapi_version: 3.0.0
+      # 可选参数（美化）
+      servers_from_info: true
+      operation_summary_as_title: true
 markdown_extensions:
     # MkDocs Material 推荐的基础扩展
     - attr_list
@@ -31,4 +59,10 @@ markdown_extensions:
     - pymdownx.betterem
     - pymdownx.tasklist: # 支持 - [ ] 任务列表
         custom_checkbox: true
-    - pymdownx.highlight
+    #- pymdownx.highlight
+    - pymdownx.tabbed:
+        alternate_style: true
+    - pymdownx.highlight:
+        anchor_linenums: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets

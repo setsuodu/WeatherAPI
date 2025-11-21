@@ -24,7 +24,11 @@ bld/
 
 # Visual Studio 2015 cache/options directory
 .vs/
+
+# 本机构建产物（几百 MB）和 .NET 的 bin/、obj/、publish/ 完全同性质，绝对不要提交到 Git！
 .venv/
+# site/ 是 mkdocs build 命令生成的静态网站产物
+site/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/

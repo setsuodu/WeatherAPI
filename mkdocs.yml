@@ -18,25 +18,7 @@ plugins:
     - swagger-ui-tag
       
 markdown_extensions:
-    # MkDocs Material 推荐的基础扩展
-    - attr_list
-    - def_list
-    - footnotes
-    - admonition
-    - pymdownx.arithmatex:
-        generic: true
-
-    # 高级增强（提供类似 Obsidian 的高级渲染）
-    - pymdownx.details
-    - pymdownx.superfences # 必须加这个，否则代码块嵌套会出问题
-    - pymdownx.critic # 评论/批注
-    - pymdownx.betterem
-    - pymdownx.tasklist: # 支持 - [ ] 任务列表
-        custom_checkbox: true
-    #- pymdownx.highlight
-    - pymdownx.tabbed:
-        alternate_style: true
-    - pymdownx.highlight:
-        anchor_linenums: true
-    - pymdownx.inlinehilite
-    - pymdownx.snippets
+  - pymdownx.superfences      # 必须加这一行！！！
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed

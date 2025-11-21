@@ -1,0 +1,5 @@
+# requirements.txt
+mkdocs-material>=9.0
+mkdocs-swagger-ui-tag>=0.6.0
+pymdown-extensions
+# 其他插件...

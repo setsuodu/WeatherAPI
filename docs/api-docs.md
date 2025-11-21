@@ -8,7 +8,7 @@
 <script>
   window.onload = function() {
     SwaggerUIBundle({
-      url: "/api/swagger.json",           // 关键：用绝对路径从根开始
+      url: "/swagger.json",           // 关键：用绝对路径从根开始
       dom_id: '#swagger-ui',
       presets: [
         SwaggerUIBundle.presets.apis,

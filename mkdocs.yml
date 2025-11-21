@@ -15,6 +15,7 @@ plugins:
     # 如果要处理 Obsidian 链接和特性，需要在这里添加相应插件
     # - mkdocs-for-obsidian
     # - awesome-pages
+    - swagger-ui-tag
       
 markdown_extensions:
     # MkDocs Material 推荐的基础扩展
@@ -27,7 +28,7 @@ markdown_extensions:
 
     # 高级增强（提供类似 Obsidian 的高级渲染）
     - pymdownx.details
-    - pymdownx.superfences
+    - pymdownx.superfences # 必须加这个，否则代码块嵌套会出问题
     - pymdownx.critic # 评论/批注
     - pymdownx.betterem
     - pymdownx.tasklist: # 支持 - [ ] 任务列表

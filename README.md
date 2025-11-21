@@ -10,3 +10,7 @@ cd 👉 Rroject root
 mkdocs build --clean --strict
 mkdocs serve
 ```
+
+# FAQ
+
+1. mkdocs.yml 里面引用的插件，一定要在 ci.yml 里 pip 安装。

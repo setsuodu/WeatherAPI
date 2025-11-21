@@ -32,11 +32,14 @@ jobs:
       - name: Install dependencies
         run: |
           # 确保安装了所有需要的库
+          python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material mkdocs-roamlinks-plugin 
+          pip install mkdocs-swagger-ui-tag      # 关键这一行！
+          pip install pymdown-extensions         # 通常也需要
       
       - name: Build MkDocs site
         # 只需要构建，不需要执行 git push
-        run: mkdocs build --clean
+        run: mkdocs build --clean --strict   # --strict 能让你早点发现配置问题
       
       - name: Setup Pages
         # 官方 Pages 设置 Action
